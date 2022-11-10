@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\JqueryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,7 @@ Route::controller(SearchController::class)->group(function(){
     Route::get('demo-search', 'index');
     Route::get('autocomplete', 'autocomplete')->name('autocomplete');
 });
+// Route::controller(JqueryController::class)->group(function(){
+//     Route::get('demo-search', 'index');
+//     Route::get('autocomplete', 'autocomplete')->name('autocomplete');
+// });

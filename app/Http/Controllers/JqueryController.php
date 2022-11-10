@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 
-class SearchController extends Controller
+class JqueryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,7 @@ class SearchController extends Controller
      */
     public function index()
     {
-        return view('searchDemo');
-        // return view('searchjqueryui');
+        return view('searchjqueryui');
     }
 
     /**
@@ -25,13 +24,9 @@ class SearchController extends Controller
      */
     public function autocomplete(Request $request)
     {
-        $data = [];
-
-        if($request->filled('q')){
-            $data = User::select("name", "id")
-                        ->where('name', 'LIKE', '%'. $request->get('q'). '%')
-                        ->get();
-        }
+        $data = User::select("name as value", "id")
+                    ->where('name', 'LIKE', '%'. $request->get('search'). '%')
+                    ->get();
 
         return response()->json($data);
     }
