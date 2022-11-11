@@ -1,1 +1,6 @@
 next update
+for scout:
+scout pacakge install then scout vendor publifle
+.env file driver added SCOUT_DRIVER=database
+.....
+import record ::php artisan scout:import "App\Models\User"

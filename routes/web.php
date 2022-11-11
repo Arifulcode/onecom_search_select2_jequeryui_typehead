@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\JqueryController;
 use App\Http\Controllers\TypeheadController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +33,4 @@ Route::controller(TypeheadController::class)->group(function(){
     Route::get('demo-search', 'index');
     Route::get('autocomplete', 'autocomplete')->name('autocomplete');
 });
+Route::get('users', [UserController::class, 'index']);
